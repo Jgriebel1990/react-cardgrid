@@ -7,7 +7,7 @@ class Card extends Component {
 
         //using the ternary operator
         const style = {
-            color: this.props.isLiked ? 'purple' : 'purple',
+            color: this.props.isLiked ? 'blue' : 'blue',
         }
         const classes = this.props.isLiked ? 'fa fa-heart' : 'fa fa-heart-o'
 
@@ -16,7 +16,10 @@ class Card extends Component {
             <div className='col-md-3'>
                 <img src={this.props.src} alt={this.props.caption} />
                 <p>{this.props.caption}</p>
-                <i className={classes} style={style} aria-hidden='true'></i>
+                <i  onClick={this.props.onLike}
+                    className={classes} 
+                    style={style} 
+                    aria-hidden='true'></i>
             </div>
         );
     }
